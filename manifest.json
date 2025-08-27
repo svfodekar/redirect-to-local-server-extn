@@ -1,0 +1,37 @@
+{
+  "manifest_version": 3,
+  "name": "Connect Live Frontend To Local Server",
+  "description": "This extension enables seamless connection between your local server and a live frontend by redirecting APIs.",
+  "version": "2.0",
+  "permissions": [
+    "declarativeNetRequest",
+    "webRequest",
+    "storage",
+    "scripting",
+    "activeTab",
+    "tabs"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "externally_connectable": {
+    "matches": [
+      "https://codytools.com/redirect-to-local-server/*"
+    ]
+  },
+  "action": {
+    "default_icon": {
+      "16": "logo23.png",
+      "48": "logo23.png",
+      "128": "logo23.png"
+    }
+  },
+  "icons": {
+    "16": "logo23.png",
+    "48": "logo23.png",
+    "128": "logo23.png"
+  },
+  "host_permissions": [
+    "*://*/*"
+  ]
+}

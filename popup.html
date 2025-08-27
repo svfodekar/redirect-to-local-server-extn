@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>URL Redirector</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+
+<body>
+  <div class="popup-box">
+    <div class="header-box">
+      <h3>Redirect to local Server</h3>
+      <img src="logo23.png" alt="Logo" class="header-logo">
+      <label class="switch">
+        <input type="checkbox" id="main-toggle" class="enable-toggle"> <!-- Change 'checked' to leave it unchecked -->
+        <span class="slider round">
+          <span class="switch-text">OFF</span> <!-- Change 'ON' to 'OFF' if you want it to reflect that state -->
+        </span>
+      </label>
+      <button id="toggleButton">+</button>
+    </div>
+  
+    <div class="redirect-wrapper">
+
+      <div class="redirect-container">
+        <label for="fromUrl" class="small-label">From URL</label>
+        <input type="text" id="fromUrl" class="small-input"
+          placeholder="https://your-server-url.com/something">
+  
+        <label for="toUrl" class="small-label">To URL</label>
+        <input type="text" id="toUrl" class="small-input"
+          placeholder="https://localhost:port/something">
+  
+        <div class="method-save-container">
+            <select id="methodSelect" class="small-input">
+              <option value="GET">GET</option>
+              <option value="POST">POST</option>
+              <option value="PUT">PUT</option>
+              <option value="PUT">PATCH</option>
+              <option value="DELETE">DELETE</option>
+            </select>
+          <button id="addRedirect">ADD REDIRECT</button>
+        </div>
+  
+        <span id="status"></span> <!-- Display status below the button none -->
+      </div>
+  </div>
+    <div id="loading" style="display: none;">
+      <div class="spinner"></div>
+    </div>
+    <div class="redirects-list-container">
+      <div class="redirects-list-header">
+        <h4>List of APIs Connected to Local Server</h4>
+        <button id="disableAllBtn">Disable All</button>
+      </div>
+      <div class="underline"></div> <!-- Added underline div -->
+      <ul id="redirectList"></ul>
+    </div>
+  </div>
+  <script src="popup.js"></script>
+  </div>
+</body>
+
+</html>
